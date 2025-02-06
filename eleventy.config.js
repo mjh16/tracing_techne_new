@@ -6,5 +6,6 @@ module.exports = function (eleventyConfig) {
 module.exports.config = {
     dir: {
         input: "src",
+        output: "docs",
     },
 };
