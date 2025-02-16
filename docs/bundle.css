@@ -1,25 +1,52 @@
+a:link {
+    color: #083d77;
+}
+
+a:visited {
+    color: #f78764;
+}
+
+a:hover {
+    color: #89aae6;
+}
+
 nav {
     width: 10rem; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
-    top: 2rem; /* Stay at the top */
+    top: 10%; /* Stay at the top */
     left: 0;
-    background-color: #c5c5c5; /* Black */
+    background-color: #f1eee48f; /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
+    border-radius: 0px 25px 25px 0px;
 }
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 1rem 0.5rem;
 }
 
 nav li {
-    padding: 6px 8px 6px 16px;
+    padding: 0.5rem 1rem;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #000000;
     display: block;
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+nav li a:link {
+    color: #000000;
+}
+
+nav li a:visited {
+    color: #000000;
+}
+
+nav li a:hover {
+    color: #89aae6;
 }
 
 body {
@@ -27,6 +54,26 @@ body {
     min-height: 95vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
+    font-family: franklin-gothic-urw, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: neue-haas-grotesk-display, sans-serif;
+}
+
+main {
+    margin: 0 5rem auto 1rem;
+}
+
+main h1 {
+    text-align: center;
 }
 
 footer {
@@ -38,4 +85,16 @@ footer {
 img {
     max-width: 90%;
     height: auto;
+    margin: 0 5%;
+}
+
+.inline_nav {
+    text-align: center;
+}
+
+figcaption {
+    font-size: 10pt;
+    font-family: franklin-gothic-urw, sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }

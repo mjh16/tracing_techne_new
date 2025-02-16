@@ -2,4 +2,5 @@
 layout: page.liquid
 title: References
 ---
-# References
+<div class="inline_nav">
+<p><a href="/discussion/">Previous</a></p></div>
