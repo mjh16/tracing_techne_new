@@ -1,9 +1,12 @@
-const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+module.exports = async function (eleventyConfig) {
+    const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
+
+    eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+};
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/bundle.css");
     eleventyConfig.addPassthroughCopy("./src/img");
-    eleventyConfig.addPlugin(eleventyImageTransformPlugin);
 };
 
 module.exports.config = {
@@ -11,4 +14,5 @@ module.exports.config = {
         input: "src",
         output: "docs",
     },
+    pathPrefix: "/michael.healy/",
 };
