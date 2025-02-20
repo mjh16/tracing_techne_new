@@ -18,4 +18,4 @@ _Techne_ helps scholars understand what the material of rhetoric is, conceive of
 The in-betweenness that _techne_ inhabits highlights explicit convergences of imagination and rhetorical practice inherent with acts of creation can be understood not as serendipity experienced by a certain few, but as a practice that can be learned, revised, recalled, and utilized (Pender 2011, 141). Additionally, as both Pender and Lauer have indicated, tensions between theories of invention and techne have left material traces within the scholarship and practices of rhetoric and composition. 
 
 <div class="inline_nav">
-<p><a href="/introduction/">Previous</a>|<a href="/methods/">Next</a></p></div>
+<p><a href="/michael.healy/introduction/">Previous</a>|<a href="/michael.healy/methods/">Next</a></p></div>

@@ -4,4 +4,4 @@ title: Discussion
 ---
 
 <div class="inline_nav">
-<p><a href="/results/">Previous</a>|<a href="/references/">Next</a></p></div>
+<p><a href="/michael.healy/results/">Previous</a>|<a href="/michael.healy/references/">Next</a></p></div>

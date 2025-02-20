@@ -8,4 +8,4 @@ Inquiry based data analysis.
 ### Data Visualization
 
 <div class="inline_nav">
-<p><a href="/literature_review/">Previous</a>|<a href="/methodology/">Next</a></p></div>
+<p><a href="/michael.healy/literature_review/">Previous</a>|<a href="/michael.healy/methodology/">Next</a></p></div>
