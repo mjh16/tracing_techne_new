@@ -1,10 +1,12 @@
 ---
 layout: home.liquid
-title: "Tracing Techne: Topic Modeling, Data Visualization, and Seeking Impressions"
+title: "Tracing Techne: Impressions, Invention, and the Craft of Rhetoric"
 ---
-# Tracing _Techne_: Topic Modeling, Data Visualization, and Seeking Impressions
+# Tracing _Techne_: Impressions, Invention, and the Craft of Rhetoric
 ## Kairos Article Draft
 In this webtext I trace the rhetorical concept of _techne_ alongside mentions of invention through a corpus of rhetoric and composition field scholarship of the 1990s utilizing the digital humanities methods of topic modeling and data visualization. I undertook this project to explore intersections of creativity, invention, and text-technologies that emerged out of the 1990s and played a key role in recent approaches to digital rhetoric, multimodal composing, and circulation.
+
+I’m interested in the 1990s for a four reasons. The first is the influx of computer technology into writing classrooms and the subsequent increase in scholarship. The second is the emergence of the World Wide Web and changes culturally and on writing. Third, I’m interested in the influence of the social turn of the 1980s on the 1990s. Lastly, is a disciplinary impulse in the 1990s in rhetoric and composition that led to the professionalization of journals and academic publication.
 
 <figure>
 <img src="img/invention_by_year_filtered.png" alt="Visualization that shows _techne_ impressions by year">

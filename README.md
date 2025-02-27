@@ -1,0 +1,2 @@
+# Tracing _Techne_ Kairos webtext
+This is a repository for the webtext "Tracing _Techne_ Topic Modeling, Data Visualization, and Seeking Impressions" that is being prepared for the journal Kairos. This repo is for the coding that is ongoing for the project and to stage changes to the text.
