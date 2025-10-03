@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://use.typekit.net/qbf4nzm.css">
+<meta charset="utf-8">
+<title>Appendix</title>
+<link rel="stylesheet" href="/michael.healy/bundle.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/michael.healy/">Home</a></li>
+            <li><a href="/michael.healy/introduction/">Introduction</a></li>
+            <li><a href="/michael.healy/literature_review/">Literature Review</a></li>
+            <li><a href="/michael.healy/methodology/">Methodology</a></li>
+            <li><a href="/michael.healy/methods/">Methods</a></li>
+            <li><a href="/michael.healy/results/">Results</a></li>
+            <li><a href="/michael.healy/discussion">Discussion</a></li>
+            <li><a href="/michael.healy/references">References</a></li>
+            <li><a href="/michael.healy/appendix">Appendix</a></li>
+        </ul>
+    </nav>
+    <main>
+    <h1>Appendix</h1>
+    <h1>Code</h1>
+<h2>Keyterms Parser and Explorer</h2>
+<p>This program opens the combined meta-data and textual data files for the corups, uses the keyterms file to search the dataset for instances of those words, and then saves the word-document name to a new CSV file that lists each keyterm and the article names.</p>
+<pre><code class="language-python">import json
+import os
+from pathlib import Path
+import csv
+from extract import json_extract
+</code></pre>
+<pre><code class="language-python"># Setup working folder and initialize list variables
+working_folder = Path.home() / (&quot;syncthing/Dissertation/dissertation_data/dissertation_data_working_folder&quot;)
+data_folder = Path.home() / (&quot;syncthing/Dissertation/dissertation_data/dissertation_data_working_folder/text_meta_json_combined/&quot;)
+
+# Read json file of keyterms and save to new python list
+with open (working_folder / &quot;keyterms.json&quot;, 'r') as f:
+    json_terms = json.load(f)
+    keyterms_list = json_terms['keyterms']
+
+# check that json loaded correctly
+print(keyterms_list)
+
+# Setup list with json file names
+all_json_files = []
+
+# Read each file in the data folder and write its name and filepath to list
+for file in data_folder.glob(&quot;*.json&quot;):
+    all_json_files.append(file.parent / file.name)
+
+# Check that file list works
+print(all_json_files[5])
+</code></pre>
+<pre><code class="language-python">for keyterm in keyterms_list:
+    with open(working_folder / str(keyterm + &quot;.csv&quot;), 'w+', encoding='utf-8') as csvfile:
+        csv_columns = ['title', 'file']
+        writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
+        writer.writeheader()
+    for file in all_json_files:
+        with open(file, 'r') as f:
+            working_file = json.load(f, strict=False)
+            if working_file.get('text') is not None:
+                text = working_file['text']
+            else:
+                continue
+            match = text.find(keyterm)
+            if match &gt; 0:
+                if 'title' in working_file:
+                    title = working_file['title']
+                elif json_extract(working_file, 'article-title'):
+                    title = json_extract(working_file, 'article-title')
+                else:
+                    title = &quot;No Title&quot;
+                article_data = {&quot;title&quot;: title, &quot;file&quot;: str(file)}
+                with open(working_folder / str(keyterm + &quot;.csv&quot;), 'a', encoding='utf-8', newline='') as output:
+                    writer = csv.DictWriter(output, fieldnames=csv_columns)
+                    writer.writerow(article_data)
+</code></pre>
+<h2>Bokeh Visualizations Topics</h2>
+<p>This notebook is for exploratory visual analysis using Bokeh of the topic models</p>
+<pre><code class="language-python">import pandas as pd
+from bokeh.plotting import figure, output_file, show
+from bokeh.models import ColumnDataSource, DataTable, TableColumn
+from bokeh.models.tools import HoverTool
+from bokeh.transform import factor_cmap, factor_mark, linear_cmap, jitter
+from bokeh.io import output_notebook
+import colorcet as cc
+import numpy as np
+import xlsxwriter
+
+from bokeh.palettes import viridis
+
+import csv
+from pathlib import Path
+</code></pre>
+<h3>Set Up Spaces and Load Data</h3>
+<p>These set the working folder, name the topic files, and name the key file. It also sets up the way in which Bokeh will display the data, in this case it is outputting into this notebook. This run of the topic modeling created 50 topics from the invention keyword search.</p>
+<pre><code class="language-python">working_folder = Path.home() / (&quot;syncthing/Dissertation/dissertation_data/dissertation_data_working_folder/topic_modeling&quot;)
+
+topic_file = Path(working_folder / ('invention_by_year.csv'))
+key_file = Path(working_folder / ('invention_keys_filtered.csv'))
+
+output_notebook()
+
+topics = pd.read_csv(topic_file)
+keys = pd.read_csv(key_file)
+
+inv_mentions = topics.groupby(&quot;year&quot;)[&quot;filename&quot;].count().reset_index(name=&quot;count&quot;)
+#keys_list = keys['topic'].tolist()
+</code></pre>
+<div class="bk-root">
+    <a href="https://bokeh.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
+    <span id="1002">Loading BokehJS ...</span>
+</div>
+<h3>Data Tables</h3>
+<p>This is a representation of data tables from the dataset.</p>
+<pre><code class="language-python">table_source = ColumnDataSource(inv_mentions)
+
+table = figure(width=720, x_minor_ticks=2)
+
+colors=viridis(10)
+color_map = linear_cmap(field_name='year', palette=colors, low=1990, high=1999)
+
+table.vbar(x='year', top='count',source=table_source, width=0.70, color=color_map)
+table.title.text = 'Documents Containing &quot;Invention&quot; per year'
+table.xaxis.axis_label = 'Year'
+table.yaxis.axis_label = 'Article Count'
+table.xaxis[0].ticker.desired_num_ticks = 10
+table.xaxis[0].ticker.num_minor_ticks = 0
+hover = HoverTool()
+hover.tooltips=[
+    ('Year', '@year'),
+    ('Count', '@count')
+]
+
+table.add_tools(hover)
+show(table)
+</code></pre>
+<div class="bk-root" id="575346b1-974a-4cc0-9eb9-f33e6a004c57" data-root-id="1004"></div>
+<h3>Prepare data for visualizations</h3>
+<ul>
+<li>This block makes a list of the entires within the dataframe available to Bokeh for visualizations</li>
+<li>This block removes all low significance match values from the topic models (less than 5%)</li>
+</ul>
+<pre><code class="language-python">column_list=['1','2','9','10','11','12','13','14','16','17','22','25','26','30','38','40','42','45','47']
+#column_list = []
+#for i in range(50):
+#    i = str(i)
+#    column_list.append(i)
+
+for column in column_list:
+    values = topics[column].values
+    mask = values &lt; 0.05
+    values[mask] = np.nan
+    topics[column] = values
+</code></pre>
+<p>This block groups the means together an exports an Excel file which contains the means, minumum, and maximum weight values for each topic for each year</p>
+<pre><code class="language-python">column_list.append('year')
+topics_min = topics[column_list].groupby(['year']).min()
+topics_max = topics[column_list].groupby(['year']).max()
+topics_mean = topics[column_list].groupby(['year']).mean()
+
+output_excel_file = Path(working_folder / ('invention_filtered_topics.xlsx'))
+
+writer = pd.ExcelWriter(output_excel_file, engine = 'xlsxwriter')
+topics_mean.to_excel(writer, sheet_name=&quot;Mean&quot;)
+topics_min.to_excel(writer, sheet_name=&quot;Min&quot;)
+topics_max.to_excel(writer, sheet_name=&quot;Max&quot;)
+writer.save()
+
+column_list.remove('year')
+</code></pre>
+<p>These next two blocks set up the scatter plot and tabular data</p>
+<pre><code class="language-python">topics = topics.groupby(['year']).mean()
+topics = topics.reset_index()
+source = ColumnDataSource(topics)
+</code></pre>
+<pre><code class="language-python">keys_source = ColumnDataSource(keys)
+
+columns = [
+    TableColumn(field=&quot;key&quot;, title=&quot;Key&quot;),
+    TableColumn(field=&quot;interpretation&quot;, title=&quot;Subjective Reading&quot;),
+    TableColumn(field=&quot;topic&quot;, title=&quot;Topics&quot;),
+    ]
+data_table = DataTable(source=keys_source, index_position=None, columns=columns, autosize_mode='fit_viewport')
+</code></pre>
+<h3>Visualizations</h3>
+<p>Below are interactive visualizations from the dataset</p>
+<pre><code class="language-python">p = figure(output_backend=&quot;webgl&quot;, width=800, height=1000)
+
+color = cc.glasbey
+
+i = 0
+    
+for column in column_list:
+    x=jitter('year', 0.5)
+    p.scatter(x=x, y=column, source=source, color=color[i], size=10, name=column, muted_color=color[int(column)], muted_alpha=0.2, legend_label=column)
+    p.line(x=x, y=column, source=source, color=color[i], line_width=2, name=column, muted_color=color[int(column)], muted_alpha=0.2, legend_label=column)
+    i +=1
+   
+p.xaxis.axis_label = &quot;Year Published&quot;
+p.yaxis.axis_label = &quot;Topic Mean&quot;
+p.xaxis[0].ticker.desired_num_ticks = 10
+p.xaxis[0].ticker.num_minor_ticks = 0
+p.title = &quot;Invention Topic Means per Year &gt; .05&quot;
+
+p.legend.location = &quot;right&quot;
+p.legend.click_policy=&quot;mute&quot;
+
+legend = p.legend[0]
+
+hover = HoverTool()
+hover.tooltips=[
+    ('Year', '@year'),
+    ('Topic Key', '$name'),
+    ('Topic Match', '@$name{0.0000}')
+]
+
+p.add_tools(hover)
+p.add_layout(legend, 'right')
+output_graph = Path(working_folder / ('invetion_techne_visualization.html'))
+output_file(output_graph)
+show(p)
+output_table = Path(working_folder / ('invention_techne_datatable.html'))
+output_file(output_table)
+show(data_table)
+</code></pre>
+<div class="bk-root" id="f277ecda-5c2b-42d5-bf8b-03dcb3d3d591" data-root-id="1120"></div>
+<div class="bk-root" id="586f5b15-5228-4b55-b827-2e5c2da2450c" data-root-id="1117"></div>
+<pre><code class="language-python">
+</code></pre>
+<h1>Full Dataset</h1>
+<p>Highlighted rows are ones that were identified as matching a compound definition of <em>techne</em>.</p>
+<figure>
+<iframe src="../visualizations/invention_keys.fld/sheet001.htm" sandbox="allow-same-origin allow-scripts" width="810" height="660" style="overflow:hidden" frameborder="0">
+</iframe>
+<figcaption>Figure 1: Interactive visualization for the exploratory data analysis that shows the weight of different topic models per year.</figcaption>
+</figure>
+<footer>
+<p xmlns:cc="http://creativecommons.org/ns#" >This work by <span property="cc:attributionName">Michael Healy</span> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
+</footer>
+    </main>
+</body>
+</html>
