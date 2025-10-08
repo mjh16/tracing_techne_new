@@ -1,7 +1,5 @@
----
-layout: page.liquid
-title: References
----
+Title: Tracing Techne  
+Author: Michael Healy
 
 Atwil, Janet M. (2002). Introduction: Finding a home or making a path. In Janet M. Atwil and Janice M. Lauer (Eds.), *Perspectives on rhetorical invention* . University of Tennessee Press.
 
@@ -90,7 +88,3 @@ Ulmer, Gregory L. (1994). *Heuretics: The logic of invention*. John Hopkins Univ
 Young, Richard. (1976). Invention: A topographical survey.” In Gary Tate (Ed.) *Teaching composition: Ten bibliographic essays*. Texas Christian University Press.
 
 ---. (1980). Arts, crafts, gifts, and knacks: Some disharmonies in the new rhetoric. *Visible Language 14*(4), 341-350.
-
-
-<div class="inline_nav">
-<p><a href="/michael.healy/so_what/">Previous</a>|<a href="/michael.healy/appendix/">Next</a></p></div>

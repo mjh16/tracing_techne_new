@@ -2,6 +2,25 @@
 layout: page.liquid
 title: Appendix
 ---
+# Data
+Below are the full data tables.
+
+## Topic Models
+Highlighted rows are ones that were identified as matching a compound definition of _techne_.
+<figure>
+<iframe src="../visualizations/invention_keys.htm" sandbox="allow-same-origin allow-scripts" width="810" height="810" style="overflow:hidden" frameborder="0">
+</iframe>
+<figcaption>Figure 1: Interactive visualization for the exploratory data analysis that shows the weight of different topic models per year.</figcaption>
+</figure>
+
+## Identified Articles
+
+Articles identified through alignment with topic models
+<figure>
+<iframe src="../visualizations/identified_articles.htm" sandbox="allow-same-origin allow-scripts" width="810" height="660" style="overflow:hidden" frameborder="0">
+</iframe>
+<figcaption>Figure 1: Interactive visualization for the exploratory data analysis that shows the weight of different topic models per year.</figcaption>
+</figure>
 
 # Code
 ## Keyterms Parser and Explorer
@@ -146,19 +165,7 @@ hover.tooltips=[
 table.add_tools(hover)
 show(table)
 ```
-
-
-
-
-
-
-
-
 <div class="bk-root" id="575346b1-974a-4cc0-9eb9-f33e6a004c57" data-root-id="1004"></div>
-
-
-
-
 
 ### Prepare data for visualizations
 - This block makes a list of the entires within the dataframe available to Bokeh for visualizations
@@ -295,12 +302,3 @@ show(data_table)
 ```python
 
 ```
-
-
-# Full Dataset
-Highlighted rows are ones that were identified as matching a compound definition of _techne_.
-<figure>
-<iframe src="../visualizations/invention_keys.fld/sheet001.htm" sandbox="allow-same-origin allow-scripts" width="810" height="660" style="overflow:hidden" frameborder="0">
-</iframe>
-<figcaption>Figure 1: Interactive visualization for the exploratory data analysis that shows the weight of different topic models per year.</figcaption>
-</figure>

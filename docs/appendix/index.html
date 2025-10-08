@@ -16,13 +16,30 @@
             <li><a href="/michael.healy/methods/">Methods</a></li>
             <li><a href="/michael.healy/results/">Results</a></li>
             <li><a href="/michael.healy/discussion">Discussion</a></li>
+            <li><a href="/michael.healy/so_what">So What</s></li>
             <li><a href="/michael.healy/references">References</a></li>
             <li><a href="/michael.healy/appendix">Appendix</a></li>
         </ul>
     </nav>
     <main>
     <h1>Appendix</h1>
-    <h1>Code</h1>
+    <h1>Data</h1>
+<p>Below are the full data tables.</p>
+<h2>Topic Models</h2>
+<p>Highlighted rows are ones that were identified as matching a compound definition of <em>techne</em>.</p>
+<figure>
+<iframe src="../visualizations/invention_keys.htm" sandbox="allow-same-origin allow-scripts" width="810" height="810" style="overflow:hidden" frameborder="0">
+</iframe>
+<figcaption>Figure 1: Interactive visualization for the exploratory data analysis that shows the weight of different topic models per year.</figcaption>
+</figure>
+<h2>Identified Articles</h2>
+<p>Articles identified through alignment with topic models</p>
+<figure>
+<iframe src="../visualizations/identified_articles.htm" sandbox="allow-same-origin allow-scripts" width="810" height="660" style="overflow:hidden" frameborder="0">
+</iframe>
+<figcaption>Figure 1: Interactive visualization for the exploratory data analysis that shows the weight of different topic models per year.</figcaption>
+</figure>
+<h1>Code</h1>
 <h2>Keyterms Parser and Explorer</h2>
 <p>This program opens the combined meta-data and textual data files for the corups, uses the keyterms file to search the dataset for instances of those words, and then saves the word-document name to a new CSV file that lists each keyterm and the article names.</p>
 <pre><code class="language-python">import json
@@ -231,13 +248,7 @@ show(data_table)
 <div class="bk-root" id="586f5b15-5228-4b55-b827-2e5c2da2450c" data-root-id="1117"></div>
 <pre><code class="language-python">
 </code></pre>
-<h1>Full Dataset</h1>
-<p>Highlighted rows are ones that were identified as matching a compound definition of <em>techne</em>.</p>
-<figure>
-<iframe src="../visualizations/invention_keys.fld/sheet001.htm" sandbox="allow-same-origin allow-scripts" width="810" height="660" style="overflow:hidden" frameborder="0">
-</iframe>
-<figcaption>Figure 1: Interactive visualization for the exploratory data analysis that shows the weight of different topic models per year.</figcaption>
-</figure>
+
 <footer>
 <p xmlns:cc="http://creativecommons.org/ns#" >This work by <span property="cc:attributionName">Michael Healy</span> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 </footer>
