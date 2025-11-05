@@ -41,9 +41,46 @@
 <h2><strong>Tacking Out - Distant Reading</strong></h2>
 <p>I first examine the corpus through distant reading via topic modeling and data visualization. This process allows for a high-level overview of trends within the corpus and serves as a first place to examine impressions of <em>techne</em>.</p>
 <h2><strong>Topic Modeling</strong></h2>
-<p>My chosen method conducting investigative data analysis is topic modeling. Topic modeling is a form of natural language processing that statistically calculates the relevance of topics within a corpus of textual data. Through a combination of computational power and statistical analysis, a topic model generates a list of highly plausible topics that can be inferred and read in relationship to a corpus as a form of distant reading in which topics emerge from texts in response to a subjective reading of the generated lists of words. Table 1 provides a selection of topics from the corpus identified as aligning with a compound definition of <em>techne</em>. Each topic has a weight value indicating how strongly each bundle of words may be found across the corpus. For example, if one word is found within a document, a grouping with a stronger weight will tend to also include the remaining words. There is then the list of words. And finally is my subjective reading of the topic.</p>
+<p>My chosen method conducting investigative data analysis is topic modeling. Topic modeling is a form of natural language processing that statistically calculates the relevance of topics within a corpus of textual data. To generate the topic models I used the program MALLET which utilizes a Latent Dirichlet Allocation(LDA) as the algorithm to generate the topics. Through a combination of computational power and statistical analysis, a topic model generates a list of highly plausible topics that can be inferred and read in relationship to a corpus as a form of distant reading in which topics emerge from texts in response to a subjective reading of the generated lists of words. Table 1 provides a selection of topics from the corpus identified as aligning with a compound definition of <em>techne</em>. Each topic has a weight value indicating how strongly each bundle of words may be found across the corpus. For example, if one word is found within a document, a grouping with a stronger weight will tend to also include the remaining words. There is then the list of words. And finally is my subjective reading of the topic.</p>
 <figure>
-<img src="../img/topic_table_excerpt.png" alt="Visualization that shows _techne_ impressions by year">
+<table>
+    <tr>
+        <th>Key</th>
+        <th>Weight</th>
+        <th>Topic</th>
+        <th>Interpretation</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>0.46233</td>
+        <td>social language community discourse process knowledge texts context sense individual theory meaning view thinking understanding people ways nature text invention</td>
+        <td>discourse, community, and context</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>0.90479</td>
+        <td>theory discourse question point terms fact argument view make position kind makes simply discussion claim essay practice problem claims rhetoric </td>
+        <td>discourse, theory and argument, essay</td>
+    </tr>
+    <tr>
+        <td>25</td>
+        <td>0.66551</td>
+        <td>form time work words made early number long general set development ideas rhetorical sense history process system found based present</td>
+        <td>time and work</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>0.40334</td>
+        <td>students writing student teachers teaching classroom class college teacher composition english writers paper write reading work learning process teach writer</td>
+        <td>students, teachers, writing</td>
+    </tr>
+    <tr>
+        <td>42</td>
+        <td>0.55413</td>
+        <td>life power political society good american york public audience time language world moral speech character history great sense action state </td>
+        <td>life, power, speech, and society</td>
+    </tr>
+</table>
 <figcaption>Table 1: Top 5 weighted topics excerpted from total identified topics. Full table in Appendix A.
 </figcaption>
 </figure>
@@ -52,7 +89,7 @@
 <h2><strong>Data visualization</strong></h2>
 <p>I then took these topic models and visualized them by year and mean weight using the programming language Python by transforming the data using Pandas and visualized using Bokeh, two different libraries for use within Python. By considering the rhetorical interplay between data visualization, computational analysis, and the underlying data we can inquire into meaning at scale, and to consider how large collections of text make and support meaning for communities. If we assume that backing for disciplinary and community knowledge can be found within the documents of a group, by combining the reading of topics the charting of the results in tables and graphs, data visualization offers a means of seeing impressions of topics within corpora and on individual documents, to see how the corpora changes over time, and to infer relationships between communities and the texts they produce, circulate, and consume.</p>
 <figure>
-<img src="../img/invention_by_year_filtered.png" alt="Visualization that shows _techne_ impressions by year">
+<img src="../img/invention_by_year_filtered.png" alt="Line graph in multiple colors that shows _techne_ impressions by year. The graph is labeled 1990-1999 on the horizontal axis and 0.0 to 0.5 on the vertical axis. Five lines on the graph are labeled">
 <figcaption>Figure 1: Annotated example of this visualization with different topics arranged by different colored lines. This visualization offers a distant reading perspective of the corpus through the abstraction into visualized trends. This visualization was then read to look for patterns associated with compound definitions.
 </figcaption>
 </figure>

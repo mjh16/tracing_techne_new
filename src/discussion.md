@@ -4,27 +4,156 @@ title: Discussion
 ---
 ## Initial Observations and Visualization
 
-Two key observations can be made from an initial examination from the data visualization in Figure 2 of the model for this particular selection of documents.  The first is that there are a set of documents with strong alignments with particular topics as represented by the peaks in the visualization. This would suggest that there are a small set of documents that align well with particular topics, and would be a useful place to start investigation into individual topics. The second trend is that there are a number of more significantly common topics as represented by the more horizontal lines. These represented topics that are more common throughout the particular selection, and with topics that have a significant appearance within a greater number of documents. Upon data analysis within the particular topics, it is likely that there are still a selection of documents with a higher level of composition, but these highly rated documents can be hidden within the broader findings of the topic. Peaks
+Two key observations can be made from an initial examination from the data visualization in Figure 3 of the model for this particular selection of documents.  The first is that there are a set of documents with strong alignments with particular topics as represented by the peaks in the visualization. This would suggest that there are a small set of documents that align well with particular topics, and would be a useful place to start investigation into individual topics. The second trend is that there are a number of more significantly common topics as represented by the more horizontal lines. These represented topics that are more common throughout the particular selection, and with topics that have a significant appearance within a greater number of documents. Upon data analysis within the particular topics, it is likely that there are still a selection of documents with a higher level of composition, but these highly rated documents can be hidden within the broader findings of the topic. Peaks
 
-To start I’d like to investigate the peaks. There are a few reasons for this. The first is that peaks tend to align with a smaller selection of documents, so there are fewer individual articles and documents to contend with. Table 3 includes topics at mean weight of .25 or higher. This is a mean weight of that topic for the particular year, which includes a potential range of appearance percentages within the documents of that particular year. 
-
-<figure>
-<img src="../img/topic_table_excerpt.png" alt="Visualization that shows _techne_ impressions by year">
-<figcaption>Table 3: Top 5 weighted topics excerpted from total identified topics. Full table in Appendix A.
-</figcaption>
-</figure>
+To start I’d like to investigate the peaks. There are a few reasons for this. The first is that peaks tend to align with a smaller selection of documents, so there are fewer individual articles and documents to contend with. Table 3 includes topics at mean weight of .4 or higher. This is a mean weight of that topic for the particular year, which includes a potential range of appearance percentages within the documents of that particular year. The full selection of articles for topics over a weight of .25 is available in the Appendix.
 
 <figure>
 <iframe src="../visualizations/invention_visualization.html" sandbox="allow-same-origin allow-scripts" width="810" height="660" style="overflow:hidden" frameborder="0">
 </iframe>
-<figcaption>Figure 1: Interactive visualization for the exploratory data analysis that shows the weight of different topic models per year.</figcaption>
+<figcaption>Figure 3: Interactive visualization for the exploratory data analysis that shows the weight of different topic models per year.</figcaption>
+</figure>
+
+<figure>
+<table>
+    <tr>
+        <th>Key</th>
+        <th>Year</th>
+        <th>Weight</th>
+        <th>Topic</th>
+        <th>Interpretation</th>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>1994</td>
+        <td>0.4295</td>
+        <td>communication rogerian message rhetorical becker young interpersonal intuition relationships rhetoric rogers design conflict research o'keefe interlocutor types chat type pike</td>
+        <td>communication and rhetoric, relationships</td>
+    </tr>
+    <tr>
+        <td>40</td>
+        <td>1995</td>
+        <td>0.4153</td>
+        <td>argument bacon stasis invention arguments method cicero reason forensic bacon's case oratore roman argumentation imagination controversial crassus process cicero's controversia</td>
+        <td>argumentation and invention</td>
+    </tr>
+    <tr>
+        <td>22</td>
+        <td>1996</td>
+        <td>0.4233</td>
+        <td>bakhtin dionysius dialogue words bakhtin's dialogic composition style subject arrangement prose consciousness bakhtinian levinas rhetorical theory literate speech system holquist </td>
+        <td>bakhtin and composition</td>
+    </tr>
+    <tr>
+        <td>26</td>
+        <td>1996</td>
+        <td>0.4718</td>
+        <td>plato isocrates plato's socrates phaedrus speech trans aristotle gorgias persuasion dialectic son sophists classical cambridge ethos truth diana soul harvard</td>
+        <td>greek persuaion and dialectic</td>
+    </tr>
+    <tr>
+        <td>38</td>
+        <td>1999</td>
+        <td>0.4595</td>
+        <td>language metaphor linguistics linguistic hermeneutics theory metaphors speech meaning grammar interpretation words english hermeneutic brown narrative practice singular time cognitive</td>
+        <td>language, metapthor, linguistics</td>
+    </tr>
+</table>
+<figcaption>Table 3: Top 5 weighted topics identified from the visualization.
+</figcaption>
 </figure>
 
 First, I examined the five peaks in figure 1 that have a mean above .4, working through the peaks in chronological order, or from left to right on the visualization. These represent topics that are strongly correlated with singular documents which were all published in RSQ, and all have suggest that impressions of *techne* aligned with invention are concerned with the production of rhetoric, and aspects of argumentation and persuasion.  The first topic peak, the orange dot in 1994, is the topic communication, rhetoric, and relationships, has a weight of .43 and is represented by one document, “Humanist and Empiricist Rhetorics: Some Reflections on Rhetorical Sensitivity, Message Design Logics, and Multiple Goal Structures” by Glen McClish in RSQ. The second peak, the magenta dot and line in 1995, is the topic argumentation and invention, and has a mean weight of .42. This topic is represented by one document in that year, “Deliberative Rhetoric and Forensic Stasis: Reconsidering the Scope and Function of an Ancient Rhetorical Heuristic in the Aftermath of the Thomas/Hill Controversy” by George L. Pullman in RSQ. Third, the brown dot in 1996 is the topic Greek persuasion and dialectic with a weight of .47 and is represented by a single document, "The Rhetorical Significance of the Conversion of the Lover's Soul in Plato's ‘Phaedrus’" by John C. Adams in RSQ. The Pullman article has a title which contains heuristics, suggesting an alignment with both *techne* and invention suggested by prior histories. Together, the three results here suggest, that at least in singular documents, specific locations for further context in tracing *techne*.
 
 ## Common Lines
 
-First, there is a degree of overlap between topics, demonstrating a historical similarity of topics under discussion within this snapshot. Second, a proportion of individual topics with a higher weight, suggesting a close alignment of topics with particular documents. Table 5 includes a selection of the topics that are represented by these horizontal lines. These topics are of historical value as a place for investigation in building a plurality of scholarly contexts for discussion of invention and *techne*. Additionally, there is an emergence of topics in this snapshot explicitly to work, time, and labor, and expressivism and writing process. There is also a larger selection of texts within each of these lines, as seen in Table 6. Reading across these selected texts displays areas of potential interest in *techne* and invention, but they are more obscured than with the peaks. 
+First, there is a degree of overlap between topics, demonstrating a historical similarity of topics under discussion within this snapshot. Second, a proportion of individual topics with a higher weight, suggesting a close alignment of topics with particular documents. Table 4 includes a selection of the topics that are represented by these horizontal lines. These topics are of historical value as a place for investigation in building a plurality of scholarly contexts for discussion of invention and *techne*. Additionally, there is an emergence of topics in this snapshot explicitly to work, time, and labor, and expressivism and writing process. There is also a larger selection of texts within each of these lines. For example, Topic 1 "Dscourse, Community, and Context" includes 200 articles with a topic weight of above .05. A selection of the top five articles is in table 5. Reading across these selected texts displays areas of potential interest in *techne* and invention, but they are more obscured than with the peaks. 
+
+<figure>
+<table>
+    <tr>
+        <th>Key</th>
+        <th>Topic</th>
+        <th>Interpretation</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>social language community discourse process knowledge texts context sense individual theory meaning view thinking understanding people ways nature text invention </td>
+        <td>discourse, community, and context</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>theory discourse question point terms fact argument view make position kind makes simply discussion claim essay practice problem claims rhetoric</td>
+        <td>discourse, theory and argument, essay</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>rhetoric rhetorical classical history art theory speech tradition society study century discourse public philosophy quarterly invention rhetoricians rhetorics education cicero</td>
+        <td>rhetorical history and philosophy</td>
+    </tr>
+    <tr>
+        <td>25</td>
+        <td>form time work words made early number long general set development ideas rhetorical sense history process system found based present </td>
+        <td>time and work</td>
+    </tr>
+    <tr>
+        <td>42</td>
+        <td>life power political society good american york public audience time language world moral speech character history great sense action state</td>
+        <td>life, power, speech, and society</td>
+    </tr>
+</table>
+<figcaption>Table 4: Five consistent line weighted topics identified from the visualization.
+</figcaption>
+</figure>
+
+<figure>
+<table>
+    <tr>
+        <th>Weight</th>
+        <th>Year</th>
+        <th>Article</th>
+        <th>Author</th>
+        <th>Journal</th>
+    </tr>
+    <tr>
+        <td>0.5741</td>
+        <td>1990</td>
+        <td>Two Reviews Karen Burke LeFevre's Invention as a Social Act Carbondale, IL: Southern Illinois UP, 1987. xi + 173.</td>
+        <td>Rebecca E. Burnett and Cynthia Cochran</td>
+        <td>RSQ</td>
+    </tr>
+    <tr>
+        <td>0.47763</td>
+        <td>1993</td>
+        <td>Explicating Our Tacit Tradition: John Dewey and Composition Studies</td>
+        <td>Stephen M. Fishman</td>
+        <td>CCC</td>
+    </tr>
+    <tr>
+        <td>0.4459</td>
+        <td>1991</td>
+        <td>Converging Transformations in Teaching Composition, Literature, and Drama</td>
+        <td>Edward Rocklin</td>
+        <td>College English</td>
+    </tr>
+    <tr>
+        <td>0.4341</td>
+        <td>1994</td>
+        <td>The Social Construct of Enthymematic Understanding</td>
+        <td>J. Scenters-Zapico</td>
+        <td>RSQ</td>
+    </tr>
+    <tr>
+        <td>0.4006</td>
+        <td>1992</td>
+        <td>Brandt, Deborah. Literacy as Involvement: The Acts of Writers, Readers, and Texts. Carbondale: Southern Illinois University Press, 1990.</td>
+        <td>James E. Coomber</td>
+        <td>Rhetoric Review</td>
+    </tr>
+</table>
+<figcaption>Table 5: Selection of top five articles from topic 1, "discourse, community, and context."
+</figcaption>
+</figure>
 
 ## Limitations
 

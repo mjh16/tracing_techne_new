@@ -14,7 +14,7 @@ The results for this exploratory data analysis are derived from 50 topics genera
 
 ## Topic Model Table
 
-Table 3 includes the 18 identified topics that align with a composite definition of *techne*, their weight, and my interpretation. This is a table drawn from the 50 total topics. This table represents topics that have a strong internal coherence, in that if you find one of the words you are likely to find the rest of the words when examining a document. They have a high weight together. The full dataset can be found in the appendix. Since this model was trained with 50 topics, and then made out of a selection of topics that I read as aligning with a compound definition of *techne*, this represents one particular viewpoint of the modeling of the corpus. There are other selection criteria, and readings that could be made for the topics. This is one complication and advantage of this method of exploratory data analysis, it opens up possibilities and perspectives while allowing for continued focus on particular areas.
+Table 2 includes the 18 identified topics that align with a composite definition of *techne*, their weight, and my interpretation. This is a table drawn from the 50 total topics. This table represents topics that have a strong internal coherence, in that if you find one of the words you are likely to find the rest of the words when examining a document. They have a high weight together. The full dataset can be found in the appendix. Since this model was trained with 50 topics, and then made out of a selection of topics that I read as aligning with a compound definition of *techne*, this represents one particular viewpoint of the modeling of the corpus. There are other selection criteria, and readings that could be made for the topics. This is one complication and advantage of this method of exploratory data analysis, it opens up possibilities and perspectives while allowing for continued focus on particular areas.
 
 The list of words for the models of invention had includes terms such as freewriting and stasis within the topics suggesting an alignment of invention with *techne*. In examining this set of topics, the history of *techne* in this context is primarily based on histories of recovery through incorporating and contextualizing traditional rhetorical theories in contemporary contexts. This modeling of impressions of *techne* within this snapshot provides perspective that reaches into other areas of rhetorical theory and in composition pedagogy and practice. It also represents a snapshot of documents that appear to wrestle with and historicize the impacts of the social turn on the theory and practice of the 1990s. 
 
@@ -35,7 +35,7 @@ As a reminder, topic modeling makes the assumption that words make up topics, an
 <figure>
 <iframe src="../visualizations/invention_visualization.html" sandbox="allow-same-origin allow-scripts" width="810" height="660" style="overflow:hidden" frameborder="0">
 </iframe>
-<figcaption>Figure 1: Interactive visualization for the exploratory data analysis that shows the weight of different topic models per year.</figcaption>
+<figcaption>Figure 2: Interactive visualization for the exploratory data analysis that shows the weight of different topic models per year. Hovering over points will provide the year, topic weight, and topic number. Lines can be hidden by clicking on their color in the key. The toolbar to the right can be used to manipulate the visualization.</figcaption>
 </figure>
 
 <div class="inline_nav">
